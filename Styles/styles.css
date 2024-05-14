@@ -33,7 +33,7 @@ body{
 }
 
 .logo{
-    color: #0084ff;
+    color: #DC143C;
 }
 
 .logo span{
@@ -57,7 +57,7 @@ nav ul{
 }
 
 .nav-icon-container img:first-child{
-    margin-right: 1rem;
+    margin-right: 12px;
 }
 
 nav ul li{
@@ -103,7 +103,7 @@ header{
 }
 
 .header-bottom-side-left button{
-    background-color: #0084ff;
+    background-color: #DC143C;
     border:none;
     cursor: pointer;
     padding: 0.8rem 3.8rem;
@@ -115,7 +115,7 @@ header{
 }
 
 .header-bottom-side-left button:hover{
-    background-color: #004c94;
+    background-color: #ca7b03;
 }
 
 .header-bottom-side-right{
@@ -127,7 +127,8 @@ header{
 
 .header-bottom-side-right img{
     width: 100%;
-
+    border-radius: 5%;
+    padding-top: 1rem;
 }
 
 /*Media Queries*/
@@ -233,7 +234,7 @@ main{
 .subtitle-underline{
     width: 100px;
     height: 5px;
-    background: #0084ff;
+    background: #DC143C;
     border-radius: 9999px;
     margin: 8px auto 0  auto;
 }
@@ -251,7 +252,7 @@ main{
 }
 
 .rate{
-    color: #0084ff;
+    color: #DC143C;
     font-size: 1.3rem;
 }
 
@@ -334,7 +335,7 @@ main{
 .testimonial p:first-child{
     font-weight: bold;
     font-size: 5rem;
-    color: #0084ff;
+    color: #DC143C;
     margin-top: 3rem;
     line-height: 2rem;
 }
@@ -367,7 +368,6 @@ main{
     padding: 4rem 1rem;
     gap: 2rem;
 }
-
 hr {
     width: calc(100% - 4rem); /* Largura total menos o espaçamento em ambas as extremidades */
     margin: 2rem 0; /* Espaçamento de 2rem em ambas as extremidades */
@@ -443,3 +443,7 @@ hr {
     }
 }
 /*footer*/
+
+
+/*Pesquisa css*/
+

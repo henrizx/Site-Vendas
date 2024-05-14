@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ebebeb;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+.navbar {
+    background-color: #2c2c2c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 99;
+    width: 100%; /* Define a largura da barra de navegação como 100% */
+}
+
+.navbar > .inner-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative ;
+}
+
+.logo {
+    color: #DC143c;
+}
+
+.logo span {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li{
+    color: #fff;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-search-input {
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 300px; /* Defina a largura desejada para o campo de pesquisa */
+    padding: 0 15px;
+}
+
+.nav-search-input input[type="text"] {
+    flex: 1; /* Isso faz com que o input ocupe todo o espaço disponível */
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+}
+
+.nav-search-btn {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-icon-search {
+    width: 20px;
+    height: 20px;
+    /* Cor do ícone de pesquisa, caso a imagem não seja carregada */
+    background-color: #fff; 
+    /* Adiciona a imagem como plano de fundo */
+    background-image: url('/images/lupa.png');
+    /* Define o tamanho do plano de fundo para cobrir o elemento */
+    background-size: cover;
+    /* Caso queira posicionar a imagem no centro do botão */
+    background-position: center;
+}
+main {
+    flex: 1; /* Faz com que o main ocupe todo o espaço restante na tela */
+    display: flex;
+    justify-content: left; /* Centraliza os elementos horizontalmente */
+    margin-left: 7rem;
+    align-items: center; /* Centraliza os elementos verticalmente */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para o contêiner das janelas */
+.window-container{
+    margin-top: 1rem;
+    margin-right: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.LJ1, .LJ2, .LJ3 {
+    flex-grow: 1;
+    width: calc(33.33% - 1rem); /* Defina a largura de cada janela como 33.33% da largura total, com uma margem de 1rem entre elas */
+    max-width: calc(33.33% - 1rem); /* Para garantir que haja espaço suficiente entre as janelas */
+    max-height: calc(100vh - 160px); /* Define uma altura máxima */
+    overflow-y: auto; /* Torna o window rolável quando necessário */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 35px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Adiciona margem superior para separar da navbar */
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.rate{
+    color: #eb1741;
+    font-size: 1.3rem;
+}
+
+
+.btn-marc{
+    background-color: #DC143C;
+    border:none;
+    cursor: pointer;
+    padding: 0.4rem 3rem;
+    margin-top: 0.7rem;
+    border-radius: 9999px;
+    color:#fff;
+    font-weight: 100px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-marc:hover{
+    background-color: #ca7b03;
+}
+
+/* Estilos para telas menores que 800px */
+/* Estilos para telas menores que 800px */
+@media (max-width: 872px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .menu-bottom {
+        display: block;
+    }
+
+    .header-bottom-side {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    nav {
+        position: absolute;
+        background-color: #2c2c2c;
+        width: 200%;
+        top: 1rem;
+        display: none;
+    }
+
+    .show-menu nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+    
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    /* Redefine os estilos para as seções do conteúdo principal */
+    .window-container {
+        flex-direction: column;
+    }
+
+    .LJ1,
+    .LJ2,
+    .LJ3 {
+        width: 100%; /* Altera a largura para ocupar toda a largura disponível */
+        margin-bottom: 2rem; /* Adiciona margem inferior entre as janelas */
+        margin-right: 80rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Altera o tamanho do texto e a disposição dos elementos nas janelas */
+    .window-container h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .window-container p,
+    .window-container .rate,
+    .window-container form {
+        text-align: center;
+    }
+
+    .btn-marc {
+        margin: 0 auto; /* Centraliza o botão */
+    }
+}
