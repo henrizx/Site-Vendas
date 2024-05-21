@@ -53,7 +53,7 @@ a{
 }
 
 .logo{
-    color: #0084ff;
+    color: #25b900;
 }
 
 .logo span{
@@ -123,7 +123,7 @@ header{
 }
 
 .header-bottom-side-left button{
-    background-color: #0084ff;
+    background-color: #2cdb00;
     border:none;
     cursor: pointer;
     padding: 0.8rem 3.8rem;
@@ -140,11 +140,11 @@ header{
 .header-bottom-side-left .user {
     margin-top: 10px; /* Espaçamento entre a imagem e o texto */
     font-size: 2rem; /* Tamanho da fonte para o texto */
-    color: #004c94; /* Cor do texto */
+    color: #23ad00; /* Cor do texto */
 }
 
 .header-bottom-side-left button:hover{
-    background-color: #004c94;
+    background-color: #23ad00;
 }
 .header-bottom-side-left img{
     width: 50%;
@@ -271,7 +271,7 @@ main{
 .subtitle-underline{
     width: 100px;
     height: 5px;
-    background: #0084ff;
+    background: #2cdb00;
     border-radius: 9999px;
     margin: 8px auto 0  auto;
 }
@@ -289,7 +289,7 @@ main{
 }
 
 .rate{
-    color: #0084ff;
+    color: #23ad00;
     font-size: 1.3rem;
 }
 
@@ -372,7 +372,7 @@ main{
 .testimonial p:first-child{
     font-weight: bold;
     font-size: 5rem;
-    color: #0084ff;
+    color: #00aa00;
     margin-top: 3rem;
     line-height: 2rem;
 }
