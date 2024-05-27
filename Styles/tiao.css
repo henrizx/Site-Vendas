@@ -149,7 +149,7 @@ header{
 .header-bottom-side-left img{
     width: 50%;
     height: auto;
-    border-radius: 120px;
+    border-radius: 50%;
     margin: 10px;
     margin-right:1.5rem;
 }
