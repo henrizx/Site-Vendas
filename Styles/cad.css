@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #ebebeb; /* Cor de fundo */
-    font-family: 'Arial', sans-serif;
+    background-color: #6e6e6e; /* Cor de fundo */
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -100,6 +100,22 @@ main ul li:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin-top: 80px; /* Adiciona margem superior para separar da navbar */
     text-align: center; /* Centraliza o conteúdo horizontalmente */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+.window-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
 }
 
 
