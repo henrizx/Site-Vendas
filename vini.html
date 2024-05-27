@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #7e7e7e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            position: relative;
+            width: 10%; /* Ajuste conforme necessário */
+            max-width: 1080px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            
+        }
+        .overlay {
+            position: absolute;
+            top: 20px; /* Ajuste conforme necessário */
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="overlay">Relatos da criação do TCC</h1>
+    <div class="container">
+        <video controls autoplay loop>
+            <source src="images/vini_sbr/vini.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</body>
+</html>
