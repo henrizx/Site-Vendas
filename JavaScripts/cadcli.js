@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const clienteOption = document.getElementById('cliente');
     const windowContent = document.getElementById('window-content');
+    const goBackBtn = document.getElementById('go-back-btn');
 
     clienteOption.addEventListener('click', function () {
         // Substitui o conteúdo atual da janela pelo formulário de cadastro do cliente
@@ -29,7 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
             </form>
         `;
     });
+
+    goBackBtn.addEventListener('click', function() {
+        goBack();
+    });
 });
+
+// Função para voltar à página anterior
+function goBack() {
+    window.history.back();
+}
 
 // Função para formatar o CPF ao digitar
 function formatarCpf(cpfInput) {
@@ -38,4 +48,7 @@ function formatarCpf(cpfInput) {
     cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Insere o segundo ponto
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Insere o hífen
     cpfInput.value = cpf;
+}
+function goBack() {
+    window.history.back();
 }

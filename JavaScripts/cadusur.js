@@ -42,3 +42,8 @@ function formatarCnpj(cnpjInput) {
     cnpj = cnpj.replace(/(\d{4})(\d)/, '$1-$2'); // Coloca o hífen depois do bloco de quatro dígitos
     cnpjInput.value = cnpj;
 }
+
+function goBack() {
+    window.history.back();
+}
+

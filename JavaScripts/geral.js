@@ -24,4 +24,7 @@ visitBtnM.addEventListener('click', function() {
     // Redireciona para a página desejada
     window.location.href = 'tiao.html';
 });
+function goBack() {
+    window.history.back();
+}
 
