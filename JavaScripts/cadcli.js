@@ -41,6 +41,8 @@ function goBack() {
     window.history.back();
 }
 
+
+
 // Função para formatar o CPF ao digitar
 function formatarCpf(cpfInput) {
     let cpf = cpfInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
