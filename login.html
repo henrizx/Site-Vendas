@@ -9,17 +9,25 @@
 <body>
     <button id="backButton" onclick="goBack()">Voltar</button>
     <div class="page">
-        <form method="POST" class="formLogin">
+        <form method="POST" class="formLogin" id="loginForm" onsubmit="redirectToIndex(event)">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="email">E-mail</label>
             <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
             <label for="password">Senha</label>
             <input type="password" placeholder="Digite seu e-mail" />
-            <a href="/">Esqueci minha senha</a>
+            <a href="esqueci.html">Esqueci minha senha</a>
             <input type="submit" value="Acessar" class="btn" />
         </form>
     </div>
+    <script>
+        function redirectToIndex(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+            // Aqui você pode adicionar a lógica para validar e enviar o formulário via AJAX, se necessário
+
+            // Redireciona para index.html
+            window.location.href = 'index.html';
+        }</script>
     <script src="JavaScripts/geral.js"></script>
 </body>
 
