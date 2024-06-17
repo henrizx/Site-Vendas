@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci Minha Senha</title>
+    <link rel="stylesheet" href="Styles/esqueci.css">
+</head>
+<body>
+    <button id="backButton" onclick="goBack()">Voltar</button>
+    <div class="container">
+        <h2>Esqueci Minha Senha</h2>
+        <form id="reset-password-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Enviar Código</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    
+    <script src="JavaScripts/javascript.js"></script>
+</body>
+</html>

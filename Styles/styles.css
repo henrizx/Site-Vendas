@@ -148,7 +148,25 @@ header{
     border-radius: 5%;
     padding-top: 1rem;
 }
-
+/* Seleciona links não visitados */
+a:link {
+    color: initial; /* Define a cor desejada para links não visitados */
+  }
+  
+  /* Seleciona links visitados */
+  a:visited {
+    color: initial; /* Define a cor desejada para links visitados, igual a dos não visitados */
+  }
+  
+  /* Opcional: estilo para links ao passar o mouse */
+  a:hover {
+    color: initial; /* Define a cor desejada para links ao passar o mouse */
+  }
+  
+  /* Opcional: estilo para links ativos (clicados) */
+  a:active {
+    color: initial; /* Define a cor desejada para links ativos */
+  }
 /*Media Queries*/
 
 @media (max-width: 800px){

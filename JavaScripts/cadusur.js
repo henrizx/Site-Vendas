@@ -28,8 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label for="senha">Senha:</label><br>
                 <input type="password" id="senha" name="senha" required><br><br>
                 <input type="submit" value="Cadastrar" class="btn-cadastrar">
+               
+
+                <button id="reloadButton">&larr;</button>
             </form>
-        `;
+        `;       
+        const reloadBtn = document.getElementById('reloadButton');
+        reloadBtn.addEventListener('click', function() {
+            window.location.reload(); // Isso recarregará a página
+        });
     });
 });
 
@@ -46,4 +53,3 @@ function formatarCnpj(cnpjInput) {
 function goBack() {
     window.history.back();
 }
-
