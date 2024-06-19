@@ -78,15 +78,15 @@ nav ul{
     margin-right: 12px;
 }
 
-nav ul li{
+nav ul li {
     color: #fff;
     margin-right: 1.5rem;
-    cursor:pointer;
+    cursor: pointer;
+    transition: transform 0.4s ease, font-weight 0.4s ease; /* Adicionando 'ease' para transição suave */
 }
 
-nav ul li:hover{
-    transform:  translateY(-5px);
-    transition: all 0.2s;
+nav ul li:hover {
+    transform: translateY(-5px);
     font-weight: bold;
 }
 

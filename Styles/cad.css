@@ -39,21 +39,16 @@ body {
     color: #fff;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
 nav ul li {
     color: #fff;
     margin-right: 1.5rem;
     cursor: pointer;
+    transition: transform 0.4s ease, font-weight 0.4s ease; /* Adicionando 'ease' para transição suave */
+    list-style-type: none;
 }
 
 nav ul li:hover {
     transform: translateY(-5px);
-    transition: all 0.2s;
     font-weight: bold;
 }
 #backButton {
