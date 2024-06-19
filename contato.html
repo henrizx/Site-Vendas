@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,55 +15,127 @@
 
         body, html {
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f0f0f0;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 20px;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto;
+            color: #333;
         }
 
         .container {
-            text-align: center;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
+
+        .container img {
+            display: block;
+            max-width: 100px;
+            margin: 0 auto 20px auto;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container form label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .container form input,
+        .container form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .container form input[type="submit"] {
+            background-color: #DC143C;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .container form input[type="submit"]:hover {
+            background-color: #ca7b03;
+        }
+
         #backButton {
-    position: fixed; /* Fixa o botão em relação à janela */
-    bottom: 20px; /* Distância do botão em relação à parte inferior da janela */
-    right: 20px; /* Distância do botão em relação à parte direita da janela */
-    background-color: #DC143C; /* Cor de fundo do botão */
-    border: none; /* Remove a borda padrão */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Aparece como uma mão ao passar o mouse */
-    font-size: 16px; /* Tamanho do texto */
-    transition: background-color 0.2s; /* Transição suave para mudança de cor de fundo */
-}
-#backButton:hover {
-    background-color: #ca7b03; /* Cor de fundo ao passar o mouse */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #DC143C;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        #backButton:hover {
+            background-color: #ca7b03;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+        }
     </style>
 </head>
-<script>function goBack() {
-    window.history.back();
-}
-</script>
 <body>
     <button id="backButton" onclick="goBack()">Voltar</button>
     <div class="container">
-        <h1>HELLO WORLD!</h1>
-        <img src="images/macaco.png" alt="Sample Image">
+        <img src="images/logo-site.jpg" alt="Logo do Site">
+        <h1>Contato</h1>
+        <form id="contactForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+        <div class="success-message" id="successMessage">
+            Mensagem enviada com sucesso!
+        </div>
     </div>
-  <div><h1>Marcelo Henrique <br> <Br>Anderson</Br><br>Matheus</h1></div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+            document.getElementById('successMessage').style.display = 'block'; // Mostra a mensagem de sucesso
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none'; // Oculta a mensagem após 3 segundos
+                document.getElementById('contactForm').reset(); // Reseta o formulário
+            }, 3000);
+        });
+    </script>
 </body>
 </html>

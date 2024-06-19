@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/logo-site.jpg">
+    <title>Sobre Nós</title>
     <audio src="images/vini_sbr/a.mp3" type="audio/mpeg" autoplay></audio>
-    <title>Carta de Apresentação</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
             padding: 0;
-            background-color: #7e7e7e;
+            background-color: #555555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
         .container {
             background-color: #fff;
@@ -20,48 +25,126 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 0 20px;
+            display: none;
+        }
+        .container.active {
+            display: block;
         }
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 20px;
         }
         p {
             margin-bottom: 10px;
             text-align: justify;
+            color: #555;
         }
         .signature {
             margin-top: 20px;
             text-align: right;
             font-weight: bold;
+            color: #333;
         }
         #backButton {
-    position: fixed; /* Fixa o botão em relação à janela */
-    bottom: 20px; /* Distância do botão em relação à parte inferior da janela */
-    right: 20px; /* Distância do botão em relação à parte direita da janela */
-    background-color: #DC143C; /* Cor de fundo do botão */
-    border: none; /* Remove a borda padrão */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Aparece como uma mão ao passar o mouse */
-    font-size: 16px; /* Tamanho do texto */
-    transition: background-color 0.2s; /* Transição suave para mudança de cor de fundo */
-}
-#backButton:hover {
-    background-color: #ca7b03; /* Cor de fundo ao passar o mouse */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #DC143C;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        #backButton:hover {
+            background-color: #ca7b03;
+        }
+        .navigation {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .navigation button {
+            background-color: #DC143C;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 5px;
+            transition: background-color 0.2s;
+        }
+        .navigation button:hover {
+            background-color: #ca7b03;
+        }
     </style>
 </head>
 <body>
+    
     <button id="backButton" onclick="goBack()">Voltar</button>
-    <div class="container">
-        <h1>Carta de Apresentação - Os Primatas </h1>
-        <p>Olá, meu nome é Marcelo Henrique, mais conhecido como Marselo, sou o líder do projeto MMO - Mercadão Municipal Online.</p>
-        
+    
+    <div class="container active" id="container1">
+        <h1>Carta de Apresentação</h1>
+        <p>Olá, meu nome é Marselo, sou o líder e desenvolvedor do projeto MMO - Mercadão Municipal Online.</p>
         <p>O principal objetivo do projeto era inicialmente facilitar o comércio local, tendo em vista a grande defasagem e descaso com o comércio local. O pensamento sobre o projeto se iniciou no segundo ano do ensino médio, visto as dificuldades de um jovem em arrumar seu primeiro emprego estando necessitado, mas sem nenhuma oportunidade.</p>
-        <p>Hoje realizei parte desse objetivo infantil, sinto que o projeto pode evoluir ainda mais, mas com certeza tenho em mente que o objetivo foi cumprido nesse momento.</p>
+        <p>Hoje realizei parte desse objetivo infantil. Sinto que o projeto pode evoluir ainda mais, mas com certeza tenho em mente que o objetivo foi cumprido nesse momento.</p>
         <p class="signature">Att, Marselo</p>
+        <div>
+            <a href="https://www.instagram.com/just_marselo/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/marcelo-henrique-silva-111793243" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+            <a href="mailto:marcelohenrizx@gmail.com" target="_blank"><img src="https://img.shields.io/badge/-Gmail-%23E94134?style=for-the-badge&logo=gmail&logoColor=white"></a>
+        </div>
     </div>
-    <script src="JavaScripts/geral.js"></script>
+    
+    <div class="container" id="container2">
+        <h1>Carta de Apresentação</h1>
+        <p>Olá, meu nome é Anderson,  membro do projeto MMO - Mercadão Municipal Online.</p>
+        <p>Minha função principal no projeto é desenvolver e manter as aplicações web, garantindo que todos os usuários tenham uma experiência agradável e eficiente.</p>
+        <p>Tenho paixão por tecnologia e acredito que podemos transformar a maneira como as pessoas interagem com o comércio local através de soluções inovadoras.</p>
+        <p class="signature">Att, Anderson</p>
+        <div>
+            <a href="https://www.instagram.com/anderson_dev/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/anderson-dev" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+            <a href="mailto:anderson.dev@gmail.com" target="_blank"><img src="https://img.shields.io/badge/-Gmail-%23E94134?style=for-the-badge&logo=gmail&logoColor=white"></a>
+        </div>
+    </div>
+    
+    <div class="container" id="container3">
+        <h1>Carta de Apresentação</h1>
+        <p>Olá, meu nome é Matheus, sou o designer gráfico do projeto MMO - Mercadão Municipal Online.</p>
+        <p>Minha principal função é criar interfaces visuais atraentes e intuitivas para garantir que os usuários se sintam confortáveis e satisfeitos ao usar nossas plataformas.</p>
+        <p>Acredito no poder do design para melhorar a comunicação e a eficiência dos serviços online, e estou sempre em busca de novas tendências e técnicas para aplicar em nosso projeto.</p>
+        <p class="signature">Att, Matheus</p>
+        <div>
+            <a href="https://www.instagram.com/matheus_design/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/matheus-design" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+            <a href="mailto:matheus.design@gmail.com" target="_blank"><img src="https://img.shields.io/badge/-Gmail-%23E94134?style=for-the-badge&logo=gmail&logoColor=white"></a>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button onclick="showContainer(1)">Marselo</button>
+        <button onclick="showContainer(2)">Anderson</button>
+        <button onclick="showContainer(3)">Matheus</button>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function showContainer(index) {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(`container${index}`).classList.add('active');
+        }
+    </script>
 </body>
 </html>

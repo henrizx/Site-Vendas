@@ -231,6 +231,8 @@ main{
 .cols{
     display: grid;
     justify-content: space-evenly ;
+    
+    margin-left: 20rem;
     padding: 4rem 1rem;
 }
 
