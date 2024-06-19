@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Substitui o conteúdo atual da janela pelo formulário de cadastro do cliente
         windowContent.innerHTML = `
             <h2>Cadastro de Cliente</h2>
-            <form>
+            <form id="cadastroForm">
                 <label for="nome">Nome:</label><br>
                 <input type="text" id="nome" name="nome" required><br>
                 <label for="email">Email:</label><br>
@@ -27,15 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label for="senha">Senha:</label><br>
                 <input type="password" id="senha" name="senha" required><br><br>
                 <input type="submit" value="Cadastrar" class="btn-cadastrar">
-                
-
-
-
                 <button id="reloadButton">&larr;</button>
             </form>
         `;
+
+        const cadastroForm = document.getElementById('cadastroForm');
+        cadastroForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a submissão padrão do formulário
+            window.location.href = 'login.html'; // Redireciona para outra página
+        });
+
         const reloadBtn = document.getElementById('reloadButton');
-        reloadBtn.addEventListener('click', function() {
+        reloadBtn.addEventListener('click', function(event) {
+            event.preventDefault();
             window.location.reload(); // Isso recarregará a página
         });
     });
@@ -50,8 +54,6 @@ function goBack() {
     window.history.back();
 }
 
-
-
 // Função para formatar o CPF ao digitar
 function formatarCpf(cpfInput) {
     let cpf = cpfInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
@@ -59,7 +61,4 @@ function formatarCpf(cpfInput) {
     cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Insere o segundo ponto
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Insere o hífen
     cpfInput.value = cpf;
-}
-function goBack() {
-    window.history.back();
 }

@@ -11,13 +11,11 @@
     
     <div class="navbar">
         <div class="inner-content-header">
-            
             <a href="index.html">
                 <h1 class="logo">Mercadão <span>Municipal</span></h1>
             </a>
             <nav>
                 <button id="backButton" onclick="goBack()">Voltar</button>
-
                 <ul>
                     <a href="contato.html"><li>Contato</li></a>
                 </ul>
@@ -35,12 +33,13 @@
             </div>
         </div>
     </main>
-
-    <script src="JavaScripts/cadcli.js"></script>
-
-    <!-- Vinculando o arquivo JavaScript para o empreendedor -->
-    <script src="JavaScripts/cadusur.js"></script>
-    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+     <script src="JavaScripts/cadcli.js"></script>
+     <script src="JavaScripts/cadusur.js"></script>
     
 </body>
 </html>

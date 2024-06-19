@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Substitui o conteúdo atual da janela pelo formulário de cadastro do cliente
         windowContent.innerHTML = `
             <h2>Cadastro de Cliente</h2>
-            <form>
+            <form id="cadastroForm">
                 <label for="nome">Razão Social:</label><br>
                 <input type="text" id="nome" name="nome" required><br>
-                <label for="Fantasia">Fantasia:</label><br>
-                <input type="text" id="nome" name="nome" required><br>
+                <label for="fantasia">Fantasia:</label><br>
+                <input type="text" id="fantasia" name="fantasia" required><br>
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required><br>
                 <label for="cnpj">CNPJ:</label><br>
@@ -28,13 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label for="senha">Senha:</label><br>
                 <input type="password" id="senha" name="senha" required><br><br>
                 <input type="submit" value="Cadastrar" class="btn-cadastrar">
-               
-
                 <button id="reloadButton">&larr;</button>
             </form>
-        `;       
+        `;
+
+        const cadastroForm = document.getElementById('cadastroForm');
+        cadastroForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a submissão padrão do formulário
+            window.location.href = 'login.html'; // Redireciona para outra página
+        });
+
         const reloadBtn = document.getElementById('reloadButton');
-        reloadBtn.addEventListener('click', function() {
+        reloadBtn.addEventListener('click', function(event) {
+            event.preventDefault();
             window.location.reload(); // Isso recarregará a página
         });
     });
@@ -50,6 +56,7 @@ function formatarCnpj(cnpjInput) {
     cnpjInput.value = cnpj;
 }
 
+// Função para voltar à página anterior
 function goBack() {
     window.history.back();
 }
