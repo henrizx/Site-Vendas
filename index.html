@@ -9,7 +9,7 @@
    
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar show-menu">
         <div class="header-inner-content">
             <h1 class="logo">Mercadão <span>Municipal</span></h1>
             <nav>
@@ -73,8 +73,14 @@
             <p>Copyright 2024 - Os Primitivos - Todos direitos reservados</p>
         </div>
     </footer>
-
-    <script src="JavaScripts/"></script>
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const menuBottom = document.querySelector('.menu-bottom'); // Corrigido para '.menu-bottom'
+    
+        menuBottom.addEventListener('click', () => {
+            navbar.classList.toggle("show-menu"); // Corrigido para 'show-menu'
+        });
+    </script>
     <script src="JavaScripts/geral.js"></script>
 </body>
 </html>

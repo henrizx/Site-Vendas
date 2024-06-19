@@ -29,7 +29,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position:relative ;
+    position: relative;
 }
 #backButton {
     position: fixed; /* Fixa o botão em relação à janela */
@@ -172,7 +172,6 @@ a:link {
 @media (max-width: 800px){
     .logo{
         font-size: 1.2rem;
-
     }
 
     .menu-bottom{
@@ -196,6 +195,7 @@ a:link {
     .show-menu nav{
         display: block;
     }
+
     nav ul{
         flex-direction: column;
     }
@@ -204,6 +204,7 @@ a:link {
         padding: 0.8rem;
 
     }
+
 }
 
 
@@ -315,23 +316,16 @@ main{
 
 
 @media(max-width: 800px){
-    .section-title{
-        font-size: 1rem;
-    }
-
-    .cols-3{
+    .cols-3 {
         grid-template-columns: repeat(1,1fr);
     }
-
-    .cols-4{
-        grid-template-columns: repeat(2,1fr);
+    
+    .cols-3 img {
+        max-width: 100%;
+        margin-left: auto; /* Adiciona margem à esquerda para cada imagem */
+        margin-right: auto; /* Adiciona margem à direita para cada imagem */
     }
-
-    .product-name, .product-price, .rate{
-        max-height: 1rem;
-        overflow: hidden;
-        font-size: 0.8rem;
-    }
+    
 
     .exclusive-container{
         flex-direction: column-reverse;
