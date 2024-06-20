@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="Styles/geral.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Finalizar Compra</h1>
+
+        <!-- Produto a ser finalizado -->
+        <div class="product" data-name="Bicicleta 32 marchas" data-price="4000.00">
+            <img src="/images/marcio_bike/bike1.png" alt="Bicicleta 32 marchas">
+            <div class="product-info">
+                <p class="product-name">Bicicleta 32 marchas</p>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p class="product-price">4,000.00 <span>R$</span></p>
+                <p class="product-description">Bicicleta de alta qualidade com 32 marchas, ideal para trilhas e uso urbano.</p>
+            </div>
+        </div>
+
+        <form action="#">
+            <fieldset>
+                <legend>Escolha o método de pagamento:</legend>
+                <div class="payment-method">
+                    <input type="radio" id="pix" name="payment" value="pix">
+                    <label for="pix">PIX</label><br>
+                    <input type="radio" id="card" name="payment" value="card">
+                    <label for="card">Cartão de Crédito</label><br>
+                    <input type="radio" id="boleto" name="payment" value="boleto">
+                    <label for="boleto">Boleto Bancário</label><br>
+                </div>
+            </fieldset>
+            <div class="button-group">
+                <button type="button" id="confirm">Confirmar Pagamento</button>
+                <button type="button" id="cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('confirm').addEventListener('click', function() {
+            var selectedPayment = document.querySelector('input[name="payment"]:checked');
+            if (selectedPayment) {
+                var method = selectedPayment.value;
+                alert('Pagamento selecionado: ' + method);
+                // Mostra o popup de finalizado
+                alert('Compra finalizada com sucesso!');
+                // Redireciona para o index.html
+                window.location.href = 'index.html';
+            } else {
+                alert('Por favor, selecione um método de pagamento.');
+            }
+        });
+
+        document.getElementById('cancel').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redireciona de volta para a página inicial
+        });
+    </script>
+</body>
+</html>

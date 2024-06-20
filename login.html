@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="/Styles/login.css">
     <title>Login</title>
     <link rel="icon" href="images/logo-site.jpg">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <button id="backButton" onclick="goBack()">Voltar</button>
@@ -14,9 +21,10 @@
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <input type="email" id="email" placeholder="Digite seu e-mail" required />
             <label for="password">Senha</label>
-            <input type="password" placeholder="Digite seu e-mail" />
+            <input type="password" id="password" placeholder="Digite sua senha" required />
+            <span id="errorMessage" class="error-message"></span>
             <a href="esqueci.html">Esqueci minha senha</a>
             <input type="submit" value="Acessar" class="btn" />
         </form>
@@ -24,12 +32,49 @@
     <script>
         function redirectToIndex(event) {
             event.preventDefault(); // Impede o envio do formulário padrão
-            // Aqui você pode adicionar a lógica para validar e enviar o formulário via AJAX, se necessário
 
-            // Redireciona para index.html
-            window.location.href = 'index.html';
-        }</script>
+            var emailInput = document.getElementById('email');
+            var email = emailInput.value;
+            var passwordInput = document.getElementById('password');
+            var password = passwordInput.value;
+
+            // Expressão regular para validar o formato do e-mail
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!emailPattern.test(email)) {
+                displayErrorMessage('Por favor, insira um e-mail válido.');
+                return; // Não prossegue com o redirecionamento
+            }
+
+            // Verifica se a senha foi preenchida
+            if (password.trim() === '') {
+                displayErrorMessage('Por favor, insira sua senha.');
+                return; // Não prossegue com o redirecionamento
+            }
+
+            // Verifica o número de tentativas
+            var attempts = localStorage.getItem('loginAttempts');
+            attempts = attempts ? parseInt(attempts) : 0;
+
+            if (attempts < 1) {
+                displayErrorMessage('Senha incorreta.');
+                localStorage.setItem('loginAttempts', attempts + 1);
+            } else {
+                alert('Bem-vindo ao site Administrador');
+                localStorage.removeItem('loginAttempts');
+                window.location.href = 'index.html';
+            }
+        }
+
+        function displayErrorMessage(message) {
+            var errorMessageElement = document.getElementById('errorMessage');
+            errorMessageElement.textContent = message;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
     <script src="JavaScripts/geral.js"></script>
 </body>
-
 </html>
