@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clienteOption.addEventListener('click', function () {
         // Substitui o conteúdo atual da janela pelo formulário de cadastro do cliente
         windowContent.innerHTML = `
-            <h2>Cadastro de Cliente</h2>
+            <h2>Cadastro de PJ</h2>
             <form id="cadastroForm">
                 <label for="nome">Razão Social:</label><br>
                 <input type="text" id="nome" name="nome" required><br>
