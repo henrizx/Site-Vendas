@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar Compra</title>
     <link rel="stylesheet" href="Styles/geral.css">
+    <link rel="stylesheet" href="Styles/checkout.css">
 </head>
 <body>
     <div class="container">
@@ -21,7 +22,7 @@
             </div>
         </div>
 
-        <form action="#">
+        <form action="#" id="paymentForm">
             <fieldset>
                 <legend>Escolha o método de pagamento:</legend>
                 <div class="payment-method">
@@ -33,6 +34,27 @@
                     <label for="boleto">Boleto Bancário</label><br>
                 </div>
             </fieldset>
+
+            <!-- Campos para dados do cartão (inicialmente ocultos) -->
+            <div id="cardDetails" style="display: none;">
+                <label for="cardNumber">Número do Cartão:</label><br>
+                <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="____ ____ ____ ____"><br>
+                <label for="cardName">Nome do Titular:</label><br>
+                <input type="text" id="cardName" name="cardName"><br>
+                <label for="expiryDate">Data de Expiração:</label><br>
+                <input type="text" id="expiryDate" name="expiryDate" maxlength="5" placeholder="MM/AA"><br>
+                <label for="cvv">CVV:</label><br>
+                <input type="text" id="cvv" name="cvv" maxlength="4"><br>
+            </div>
+
+           <!-- Container para exibir chave PIX e QR Code -->
+           <div id="pixDetails" style="display: none;">
+            <label for="pixKey">Chave PIX:</label><br>
+            <input type="text" id="pixKey" name="pixKey" readonly><br>
+            <img id="qrCode" src="images/cowboy.jpg" alt="QR Code">
+        </div>
+
+
             <div class="button-group">
                 <button type="button" id="confirm">Confirmar Pagamento</button>
                 <button type="button" id="cancel">Cancelar</button>
@@ -40,24 +62,75 @@
         </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
-        document.getElementById('confirm').addEventListener('click', function() {
-            var selectedPayment = document.querySelector('input[name="payment"]:checked');
-            if (selectedPayment) {
-                var method = selectedPayment.value;
-                alert('Pagamento selecionado: ' + method);
-                // Mostra o popup de finalizado
-                alert('Compra finalizada com sucesso!');
-                // Redireciona para o index.html
-                window.location.href = 'index.html';
-            } else {
-                alert('Por favor, selecione um método de pagamento.');
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Exibe automaticamente a chave PIX ao selecionar a opção "PIX"
+            document.getElementById('pix').addEventListener('click', function() {
+                // Gerar chave PIX aleatória
+                var pixKey = generatePixKey();
+                document.getElementById('pixKey').value = pixKey;
+
+                // Gerar QR Code falso para a chave PIX (utilize um link de imagem aleatório)
+                var qrImageUrl = 'https://via.placeholder.com/200'; // Link de imagem aleatório
+                document.getElementById('qrCode').src = qrImageUrl;
+
+                // Exibir os detalhes do PIX e ocultar os detalhes do cartão
+                document.getElementById('pixDetails').style.display = 'block';
+                document.getElementById('cardDetails').style.display = 'none';
+            });
+
+            // Mostrar campos do cartão ao selecionar o método de pagamento "Cartão de Crédito"
+            document.getElementById('card').addEventListener('click', function() {
+                document.getElementById('pixDetails').style.display = 'none';
+                document.getElementById('cardDetails').style.display = 'block';
+            });
+
+            // Ocultar ambos os detalhes ao selecionar "Boleto Bancário"
+            document.getElementById('boleto').addEventListener('click', function() {
+                document.getElementById('pixDetails').style.display = 'none';
+                document.getElementById('cardDetails').style.display = 'none';
+            });
+
+            document.getElementById('confirm').addEventListener('click', function() {
+                var selectedPayment = document.querySelector('input[name="payment"]:checked');
+                if (selectedPayment) {
+                    var method = selectedPayment.value;
+                    if (method === 'card') {
+                        // Validar os campos do cartão (pode adicionar validação aqui se necessário)
+                        var cardNumber = document.getElementById('cardNumber').value;
+                        var cardName = document.getElementById('cardName').value;
+                        var expiryDate = document.getElementById('expiryDate').value;
+                        var cvv = document.getElementById('cvv').value;
+
+                        if (cardNumber === '' || cardName === '' || expiryDate === '' || cvv === '') {
+                            alert('Por favor, preencha todos os campos do cartão.');
+                            return;
+                        }
+                    }
+
+                    // Simular o processamento do pagamento
+                    alert('Compra finalizada com sucesso!');
+                    window.location.href = 'index.html'; // Redireciona para o index.html
+                } else {
+                    alert('Por favor, selecione um método de pagamento.');
+                }
+            });
+
+            document.getElementById('cancel').addEventListener('click', function() {
+                window.location.href = 'index.html'; // Redireciona de volta para a página inicial
+            });
         });
 
-        document.getElementById('cancel').addEventListener('click', function() {
-            window.location.href = 'index.html'; // Redireciona de volta para a página inicial
-        });
+        // Função para gerar uma chave PIX aleatória
+        function generatePixKey() {
+            var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var key = '';
+            for (var i = 0; i < 20; i++) {
+                key += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return key;
+        }
     </script>
 </body>
 </html>

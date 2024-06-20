@@ -111,3 +111,8 @@ button:hover {
     color: #555;
     margin-top: 8px;
 }
+.qrCode {
+    max-width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-top: 10px;
+}

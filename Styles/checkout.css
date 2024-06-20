@@ -1,0 +1,29 @@
+/* Outros estilos já definidos no checkout.css */
+
+/* Estilos específicos para campos do cartão de crédito */
+#cardDetails {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#cardDetails label {
+    margin-top: 0.5rem;
+    display: block;
+}
+
+#cardDetails input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#cardDetails input[type="text"]:focus {
+    outline: none;
+    border-color: #DC143C;
+    box-shadow: 0 0 5px rgba(220, 20, 60, 0.5);
+}
